@@ -72,7 +72,7 @@ const HeroSection = () => {
               className="size-[100px]"
             />
             <div className="bg-gray-950 border border-gray-800 py-1.5 px-4 rounded-lg inline-flex items-center gap-4">
-              <div className="size-2.5 bg-green-500 rounded-full"></div>
+              <div className="size-2.5 bg-green-500 rounded-full animate-pulse"></div>
               <div className="text-sm font-medium">
                 Available for new projects
               </div>

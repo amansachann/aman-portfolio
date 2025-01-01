@@ -2,11 +2,12 @@ import React from "react";
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
-import grainImage from "@/assets/images/grain.jpg";
 import Link from "next/link";
 import Image from "next/image";
 import CheckCircle from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
+import SectionHeader from "@/components/SectionHeader";
+import Card from "@/components/Card";
 
 const portfolioProjects = [
   {
@@ -52,30 +53,18 @@ const ProjectsSection = () => {
     <>
       <section className="pb-16 lg:py-24">
         <div className="container">
-          <div className="text-center">
-            <h3 className="uppercase font-semibold tracking-widest inline-flex gradient-text">
-              Real-World Results
-            </h3>
-            <h1 className="font-serif mt-6 text-3xl md:text-5xl">
-              Featured Projects
-            </h1>
-            <p className="text-white/60 mt-4 mx-auto max-w-md md:text-lg lg:text-xl">
-              See how I transformed my concepts into engaging digital
-              experiences.
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="Real-World Results"
+            title="Featured Projects"
+            description="See how I transformed my concepts into engaging digital
+              experiences."
+          />
           <div className="flex flex-col gap-20 mt-10 md:mt-20">
             {portfolioProjects.map((project) => (
-              <div
-                className="bg-gray-800 after:content-[''] after:absolute after:inset-0  after:rounded-3xl after:z-10 after:outline-2 after:outline after:-outline-offset-2 rounded-3xl relative bg-white/5 z-0 overflow-hidden after:outline-white/20 px-8 pt-8 after:pointer-events-none md:pt-12 md:px-10 lg:pt-16 lg:px-20"
+              <Card
                 key={project.title}
+                className="px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 pb-0"
               >
-                <div
-                  className="absolute inset-0 -z-10 opacity-5"
-                  style={{
-                    backgroundImage: `url(${grainImage.src})`,
-                  }}
-                ></div>
                 <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                   <div className="lg:pb-16">
                     <div className="inline-flex items-baseline gap-2 gradient-text uppercase font-bold tracking-widest text-sm">
@@ -113,7 +102,7 @@ const ProjectsSection = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
